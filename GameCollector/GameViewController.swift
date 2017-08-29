@@ -27,6 +27,12 @@ class GameViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        gameImageView.image = image
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func cameraTapped(_ sender: Any) {
     }
     
